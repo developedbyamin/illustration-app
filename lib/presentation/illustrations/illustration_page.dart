@@ -13,9 +13,14 @@ class IllustrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CategoryImageRepository imageRepository = ImageCategoryRepositoryImpl();
     final gridImageRepository = Provider.of<ImageRepository>(context);
     final images = gridImageRepository.getImages();
+
+    // final imageRepository = ImageCategoryRepositoryImpl();
+    final imageRepository = Provider.of<CategoryImageRepository>(context);
+
+
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -67,7 +72,7 @@ class IllustrationPage extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryRow(CategoryImageRepository imageRepository) {
+  Widget _buildCategoryRow(imageRepository) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: SizedBox(

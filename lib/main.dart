@@ -6,6 +6,8 @@ import 'package:interntask/presentation/root/bottom_navigation_bar/bloc/bottom_n
 import 'package:interntask/presentation/root/root.dart';
 import 'package:provider/provider.dart';
 import 'data/repository/grid_view_image_rep_impl.dart';
+import 'data/repository/image_category_rep_impl.dart';
+import 'domain/repository/category_image_repository.dart';
 import 'domain/repository/grid_view_image_repository.dart';
 
 void main() {
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
       child: MultiProvider(
         providers: [
           Provider<ImageRepository>(create: (_) => ImageRepositoryImpl()),
+          Provider<CategoryImageRepository>(create: (_) => ImageCategoryRepositoryImpl()),
         ],
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
