@@ -1,7 +1,7 @@
 import 'package:interntask/domain/repository/category_image_repository.dart';
 import '../models/image/category_image_model.dart';
 
-class ImageCategoryRepositoryImpl extends CategoryImageRepository {
+class ImageCategoryRepositoryImpl implements CategoryImageRepository {
   final List<CategoryImageModel> _images = [
     CategoryImageModel(
       imagePath: 'assets/images/4.jpg',
